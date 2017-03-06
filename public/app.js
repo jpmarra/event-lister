@@ -1,17 +1,23 @@
 'use strict';
 
 angular.module('eventListApp', [])
-.service('dataService', function($http){
-  this.getEvents = function(cb){
-    $http.get('/events').then(cb);
+.factory('dataFactory', function($http){
+   var getEvents = function(){
+    return $http.get('/events').then(function(results){
+      return results;
+    });
   }
-  this.insertEvent = function(event){
+  var insertEvent = function(event){
     $http.post('/create');
   }
+
+  return {
+    getEvents: getEvents,
+    insertEvent: insertEvent
+  }
 })
-.controller('mainCtrl', function($scope, dataService){
-  dataService.getEvents(function(response){
-    var events = response.data;
-    $scope.events = events;
+.controller('mainCtrl', function($scope, dataFactory){
+  dataFactory.getEvents().then(function(results){
+    $scope.events = results.data
   });
 })

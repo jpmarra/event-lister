@@ -8,8 +8,16 @@
       <h1>Event Listings</h1>
       <button>Create Event</button>
     <div>
-    <div ng-contoller="mainCtrl">
+    <div ng-controller="mainCtrl">
+      <div ng-repeat="event in events">
+        <label>{{ event.name }}</label>
+        <div>{{ event.address }}</div>
+        <div>{{ event.description }}</div>
+
+      </div>
 
     </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.js"></script>
+    <script src="app.js"></script>
   </body>
 </html>
