@@ -2,9 +2,16 @@
 //==============================================================================
 var express = require('express');
 var mongoose = require('mongoose');
-var Event = require('./event.js')
+var Event = require('./event.js');
+var bodyParser = require('body-parser');
+var morgan = require('morgan');
 
 var app = express();
+
+app.use(morgan('dev'));
+
+app.use(bodyParser.urlencoded({extended: false}));
+app.use(bodyParser.json());
 
 //Database Connection===========================================================
 var mongodbUri = 'mongodb://jpmarra:event@ds119250.mlab.com:19250/event-lister';
@@ -22,8 +29,14 @@ app.use('/', express.static('public'));
 
 app.get('/events', function(req, res){
   Event.getAllEvents(function(results){
-
+    res.send(results)
   })
+});
+
+app.post('/create', function(req, res){
+  console.log(req.body);
+  Event.insertEvent(req.body);
+  res.send("succesfully added event");
 })
 
 //Start Server==================================================================
