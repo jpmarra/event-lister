@@ -1,0 +1,17 @@
+<nav class="navbar navbar-default navbar-fixed-top">
+  <a href="#!/events">Event Listing</a>
+  <a href="#!/form">Add An Event</a>
+</nav>
+<div class="container text-center">
+  <h1>Event Listings</h1>
+  <div ng-controller="eventsCtrl">
+    <div ng-repeat="event in events">
+      <label>{{ event.name }}</label>
+      <div>{{ event.address }}</div>
+      <div>{{ event.description }}</div>
+      <div>----------</div>
+
+    </div>
+
+  </div>
+</div>
