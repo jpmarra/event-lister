@@ -9,11 +9,11 @@ var eventSchema = new mongoose.Schema({
   description: String
 })
 
-//Create Model
+//Create Model==================================================================
 var EventModel = mongoose.model('Event', eventSchema);
 
 
-//Functions to be used on Model
+//Functions to be used on Model=================================================
 var insertEvent = function(event){
   var newEvent = new EventModel(event);
   newEvent.save(function(err){
@@ -35,7 +35,7 @@ var getAllEvents = function(cb){
   });
 };
 
-//Export all functions to handle Model
+//Export all functions to handle Model==========================================
 var EventManager = {
   insertEvent: insertEvent,
   getAllEvents: getAllEvents
