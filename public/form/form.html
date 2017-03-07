@@ -1,7 +1,7 @@
 <nav class="navbar navbar-inverse navbar-fixed-top">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand" href="#!/events">Event Lister</a>
+      <a class="navbar-brand" href="#!/events"><span class="glyphicon glyphicon-music"></span>  Gig List</a>
     </div>
     <ul class="nav navbar-nav">
       <li><a href="#!/events">Event Listing</a></li>
@@ -14,8 +14,12 @@
 <div>
   <form class ="container" ng-model="event" ng-submit="insertEvent(event)">
     <div class="form-group">
-      <label class="header">Event Name</label>
-      <input ng-model="event.name" type="text" class="form-control" placeholder="Add event name...">
+      <label class="header">Headlining Act(s)</label>
+      <input ng-model="event.headliner" type="text" class="form-control" placeholder="Add artist(s)...">
+    </div>
+    <div class="form-group">
+      <label class="header">Supporting Act(s)</label>
+      <input ng-model="event.support" type="text" class="form-control" placeholder="Add artist(s)...">
     </div>
     <div class="form-group">
       <label class="header">Event Time & Date</label>
@@ -28,6 +32,10 @@
     <div class="form-group">
       <label class="header">Address</label>
       <input ng-model="event.address" type="text" class="form-control" placeholder="Add address...">
+    </div>
+    <div class="form-group">
+      <label class="header">Flyer URL</label>
+      <input ng-model="event.imageUrl" type="url" class="form-control" placeholder="Add URL...">
     </div>
     <div class="form-group">
       <label class="header">Additional Information</label>

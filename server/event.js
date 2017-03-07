@@ -3,10 +3,13 @@
 var mongoose = require('mongoose');
 //Schema for Model
 var eventSchema = new mongoose.Schema({
-  name: String,
+  headliner: String,
+  support: String,
+  originalDate: Date,
   date: String,
   venue: String,
   address: String,
+  imageUrl: String,
   description: String
 })
 

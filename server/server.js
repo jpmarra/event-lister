@@ -6,6 +6,7 @@ var Event = require('./event.js');
 var bodyParser = require('body-parser');
 var morgan = require('morgan');
 var moment = require('moment');
+var mongoURL = require('./server-config');
 
 var app = express();
 
@@ -15,9 +16,9 @@ app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 
 //Database Connection===========================================================
-var mongodbUri = 'mongodb://jpmarra:event@ds119250.mlab.com:19250/event-lister';
 
-mongoose.connect(mongodbUri, function(err){
+
+mongoose.connect(mongoURL.mongodbUri, function(err){
   if(err){
     console.log('Could not connect to Mongo!');
   }

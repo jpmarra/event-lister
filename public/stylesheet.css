@@ -9,6 +9,11 @@ body {
   text-shadow: 2px 2px #636363;
 }
 
+.flyer{
+  height: 150px;
+  background-image: url('https://images.sk-static.com/images/media/profile_images/artists/8830684/huge_avatar');
+}
+
 .form-control {
   background-color: #ecebe8;
 }
