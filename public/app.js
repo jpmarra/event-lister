@@ -18,6 +18,10 @@ angular.module('eventListApp', [
     templateUrl: 'form/form.html',
     controller: 'formCtrl'
   })
+  .when('/update', {
+    templateUrl: 'update/update.html',
+    controller: 'eventsCtrl'
+  })
 })
 .factory('dataFactory', function($http){
    var getEvents = function(){
@@ -29,6 +33,11 @@ angular.module('eventListApp', [
     console.log(event)
     $http.post('/create', event);
   }
+
+  var updateEvent = function(event){
+    $http.put('/update', event);
+  }
+
   var deleteEvent = function(event){
     console.log('event', event)
     return $http.delete('/remove/' + event._id);
@@ -37,6 +46,15 @@ angular.module('eventListApp', [
   return {
     getEvents: getEvents,
     insertEvent: insertEvent,
-    deleteEvent: deleteEvent
+    deleteEvent: deleteEvent,
+    updateEvent: updateEvent
   }
+})
+.factory('editFactory', function(){
+  var current = {};
+  current.addToEdit = function(value){
+    value.date = new Date(value.date)
+    current.event = value;
+  }
+  return current
 })

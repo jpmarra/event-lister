@@ -1,6 +1,6 @@
 body {
   font-family: 'Bree Serif', serif;
-  padding-top: 70px;
+  padding-top: 55px;
   background-color:  #828282;
 }
 
@@ -16,6 +16,10 @@ body {
 
 .form-control {
   background-color: #ecebe8;
+}
+
+.glyphicon-pencil {
+  color: #196DC7;
 }
 
 .glyphicon-remove {

@@ -42,6 +42,11 @@ app.post('/create', function(req, res){
   res.send("successfully added event");
 });
 
+app.put('/update', function(req, res){
+  Event.updateEvent(req.body);
+  res.send("Successfully updated event")
+})
+
 app.delete('/remove/:id', function(req, res){
   console.log('+++++++++++', req.params.id)
   Event.deleteEvent(req.params.id);

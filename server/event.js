@@ -29,6 +29,14 @@ var insertEvent = function(event){
   });
 };
 
+var updateEvent = function(event){
+  EventModel.findOneAndUpdate({_id: event._id}, event, function(err, docs){
+    if(err){
+      console.log("Could not update!")
+    }
+    console.log('Event Updated!')
+  })
+}
 var deleteEvent = function(id){
   EventModel.findOne({_id: id}, function(err, docs){
     if(err){
@@ -56,7 +64,8 @@ var getAllEvents = function(cb){
 var EventManager = {
   insertEvent: insertEvent,
   deleteEvent: deleteEvent,
-  getAllEvents: getAllEvents
+  getAllEvents: getAllEvents,
+  updateEvent: updateEvent
 }
 
 module.exports = EventManager;

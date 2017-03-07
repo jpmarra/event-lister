@@ -16,11 +16,12 @@
       <img ng-src="{{event.imageUrl}}" class="flyer img-rounded pull-right">
       <h1>{{ event.headliner }}</h1>
       <h4>{{ event.support }}</h4>
-      <h4>{{ event.date }}</h4>
+      <h4>{{ event.date | date : "MMMM dd, yyyy h:mm a" }}</h4>
       <h5>{{ event.venue }}</h5>
       <h5 ng-show="event.info">{{ event.address }}</h5>
       <text ng-show="event.info">{{ event.description }}</text>
       <span ng-show="event.info" class="btn-group pull-right">
+        <span ng-click="updateForm(event)" class="glyphicon glyphicon-pencil"></span>
         <span ng-click="removeEvent(event)" class="glyphicon glyphicon-remove"></span>
       </span>
     </div>
