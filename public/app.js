@@ -29,9 +29,14 @@ angular.module('eventListApp', [
     console.log(event)
     $http.post('/create', event);
   }
+  var deleteEvent = function(event){
+    console.log('event', event)
+    return $http.delete('/remove/' + event._id);
+  }
 
   return {
     getEvents: getEvents,
-    insertEvent: insertEvent
+    insertEvent: insertEvent,
+    deleteEvent: deleteEvent
   }
 })

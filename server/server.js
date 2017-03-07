@@ -39,7 +39,13 @@ app.post('/create', function(req, res){
   console.log(req.body);
 
   Event.insertEvent(req.body);
-  res.send("succesfully added event");
+  res.send("successfully added event");
+});
+
+app.delete('/remove/:id', function(req, res){
+  console.log('+++++++++++', req.params.id)
+  Event.deleteEvent(req.params.id);
+  res.send("Event was successfully deleted")
 })
 
 //Start Server==================================================================

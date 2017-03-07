@@ -26,6 +26,19 @@ var insertEvent = function(event){
   });
 };
 
+var deleteEvent = function(id){
+  EventModel.findOne({_id: id}, function(err, docs){
+    if(err){
+      console.error(err)
+    }
+  }).remove(function(err){
+    if(err){
+      console.log("Could not remove event");
+    }
+    console.log("Event has been deleted!");
+  })
+}
+
 var getAllEvents = function(cb){
   EventModel.find(function(err, results){
     if(err){
@@ -39,6 +52,7 @@ var getAllEvents = function(cb){
 //Export all functions to handle Model==========================================
 var EventManager = {
   insertEvent: insertEvent,
+  deleteEvent: deleteEvent,
   getAllEvents: getAllEvents
 }
 

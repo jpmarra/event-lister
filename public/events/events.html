@@ -11,20 +11,17 @@
 </nav>
 <div class="container">
   <h1 class="header text-center">Event Listings</h1>
-  <div ng-controller="eventsCtrl">
-    <div class="list-group" ng-class="{shadow: hover}" ng-repeat="event in events | orderBy: 'date'">
-      <div class="list-group-item" ng-mouseover="hover = true" ng-mouseleave="hover = false" ng-click="event.info = !event.info">
-        <h3>{{ event.name }}</h3>
-        <h4>{{ event.date }}</h4>
-        <h5>{{ event.venue }}</h5>
-        <h5 ng-show="event.info">{{ event.address }}</h5>
-        <text ng-show="event.info">{{ event.description }}</text>
-        <span ng-show="event.info" class="btn-group pull-right">
-          <span ng-click="" class="glyphicon glyphicon-pencil"></span>
-          <span ng-click="" class="glyphicon glyphicon-remove"></span>
-        </span>
-      </div>
-
+  <div class="list-group" ng-class="{shadow: hover}" ng-repeat="event in events | orderBy: 'date'">
+    <div class="list-group-item" ng-mouseover="hover = true" ng-mouseleave="hover = false" ng-click="event.info = !event.info">
+      <h3>{{ event.name }}</h3>
+      <h4>{{ event.date }}</h4>
+      <h5>{{ event.venue }}</h5>
+      <h5 ng-show="event.info">{{ event.address }}</h5>
+      <text ng-show="event.info">{{ event.description }}</text>
+      <span ng-show="event.info" class="btn-group pull-right">
+        <span ng-click="" class="glyphicon glyphicon-pencil"></span>
+        <span ng-click="removeEvent(event)" class="glyphicon glyphicon-remove"></span>
+      </span>
     </div>
 
   </div>

@@ -1,4 +1,5 @@
 body {
+  font-family: 'Bree Serif', serif;
   padding-top: 70px;
   background-color:  #828282;
 }
@@ -10,6 +11,10 @@ body {
 
 .form-control {
   background-color: #ecebe8;
+}
+
+.glyphicon-remove {
+  color: #AD4030;
 }
 
 .list-group-item {
