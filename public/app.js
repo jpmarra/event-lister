@@ -26,7 +26,14 @@ angular.module('eventListApp', [
     });
   }
   var insertEvent = function(event){
-    $http.post('/create');
+    console.log(event);
+    $http.post('/create', event).then(function(err){
+      if(err){
+        console.log("There was error!")
+      }
+      console.log("Added The Event!")
+      $location.path('/events');
+    });
   }
 
   return {

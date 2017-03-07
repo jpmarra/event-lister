@@ -12,22 +12,26 @@
 
 <h1 class="text-center">Add An Event</h1>
 <div>
-  <form class ="container">
+  <form class ="container" ng-model="event" ng-submit="insertEvent(event)">
     <div class="form-group">
       <label>Event Name</label>
-      <input type="text" class="form-control" placeholder="Add event name...">
+      <input ng-model="event.name" type="text" class="form-control" placeholder="Add event name...">
     </div>
     <div class="form-group">
       <label>Event Time & Date</label>
-      <input type="datetime-local" class="form-control">
+      <input ng-model="event.date" type="datetime-local" class="form-control">{{ event.date }}
+    </div>
+    <div class="form-group">
+      <label>Venue</label>
+      <input ng-model="event.venue" type="text" class="form-control" placeholder="Add venue name...">
     </div>
     <div class="form-group">
       <label>Address</label>
-      <input type="text" class="form-control" placeholder="Add address...">
+      <input ng-model="event.address" type="text" class="form-control" placeholder="Add address...">
     </div>
     <div class="form-group">
-      <label>Event Information</label>
-      <textarea class="form-control" rows="6"></textarea>
+      <label>Additional Information</label>
+      <textarea ng-model="event.description" class="form-control" rows="6" placeholder="Add any additional information here"></textarea>
     </div>
     <button type="submit" class="btn btn-success btn-lg btn-block">Submit Event</button>
   </form>

@@ -4,7 +4,8 @@ var mongoose = require('mongoose');
 //Schema for Model
 var eventSchema = new mongoose.Schema({
   name: String,
-  date: Date,
+  date: String,
+  venue: String,
   address: String,
   description: String
 })

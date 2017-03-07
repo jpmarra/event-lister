@@ -5,10 +5,11 @@ var mongoose = require('mongoose');
 var Event = require('./event.js');
 var bodyParser = require('body-parser');
 var morgan = require('morgan');
+var moment = require('moment');
 
 var app = express();
 
-app.use(morgan('dev'));
+app.use(morgan('common'));
 
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
@@ -34,7 +35,9 @@ app.get('/events', function(req, res){
 });
 
 app.post('/create', function(req, res){
+  req.body.date = moment(req.body.date).format('MMM Do YYYY h:mm')
   console.log(req.body);
+
   Event.insertEvent(req.body);
   res.send("succesfully added event");
 })
