@@ -10,10 +10,10 @@
   </div>
 </nav>
 <div class="container">
-  <h1 class="text-center">Event Listings</h1>
+  <h1 class="header text-center">Event Listings</h1>
   <div ng-controller="eventsCtrl">
-    <div class="list-group" ng-repeat="event in events | orderBy: 'date'">
-      <div class="list-group-item" ng-click="event.info = !event.info">
+    <div class="list-group" ng-class="{shadow: hover}" ng-repeat="event in events | orderBy: 'date'">
+      <div class="list-group-item" ng-mouseover="hover = true" ng-mouseleave="hover = false" ng-click="event.info = !event.info">
         <h3>{{ event.name }}</h3>
         <h4>{{ event.date }}</h4>
         <h5>{{ event.venue }}</h5>
