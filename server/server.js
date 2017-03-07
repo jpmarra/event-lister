@@ -35,7 +35,7 @@ app.get('/events', function(req, res){
 });
 
 app.post('/create', function(req, res){
-  req.body.date = moment(req.body.date).format('MMM Do YYYY h:mm')
+  req.body.date = moment(req.body.date).format('LLL')
   console.log(req.body);
 
   Event.insertEvent(req.body);

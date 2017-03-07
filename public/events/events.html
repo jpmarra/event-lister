@@ -9,16 +9,21 @@
     </ul>
   </div>
 </nav>
-<div class="container text-center">
-  <h1>Event Listings</h1>
+<div class="container">
+  <h1 class="text-center">Event Listings</h1>
   <div ng-controller="eventsCtrl">
-    <div ng-repeat="event in events">
-      <div>{{ event.name }}</div>
-      <div>{{ event.date }}</div>
-      <div>{{ event.venue }}</div>
-      <div>{{ event.address }}</div>
-      <div>{{ event.description }}</div>
-      <div>----------</div>
+    <div class="list-group" ng-repeat="event in events | orderBy: 'date'">
+      <div class="list-group-item" ng-click="event.info = !event.info">
+        <h3>{{ event.name }}</h3>
+        <h4>{{ event.date }}</h4>
+        <h5>{{ event.venue }}</h5>
+        <h5 ng-show="event.info">{{ event.address }}</h5>
+        <text ng-show="event.info">{{ event.description }}</text>
+        <span ng-show="event.info" class="btn-group pull-right">
+          <span ng-click="" class="glyphicon glyphicon-pencil"></span>
+          <span ng-click="" class="glyphicon glyphicon-remove"></span>
+        </span>
+      </div>
 
     </div>
 
