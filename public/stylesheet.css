@@ -1,35 +1,35 @@
 body {
-  font-family: 'Bree Serif', serif;
-  padding-top: 40px;
-  background-color:  #828282;
+    font-family: 'Bree Serif', serif;
+    padding-top: 40px;
+    background-color: #828282;
 }
 
-.header {
-  color: #ecebe8;
-  text-shadow: 2px 2px #636363;
-}
-
-.flyer{
-  height: 125px;
-  background-image: url('https://images.sk-static.com/images/media/profile_images/artists/8830684/huge_avatar');
+.flyer {
+    height: 125px;
+    background-image: url('https://images.sk-static.com/images/media/profile_images/artists/8830684/huge_avatar');
 }
 
 .form-control {
-  background-color: #ecebe8;
+    background-color: #ecebe8;
 }
 
 .glyphicon-pencil {
-  color: #196DC7;
+    color: #196DC7;
 }
 
 .glyphicon-remove {
-  color: #AD4030;
+    color: #AD4030;
+}
+
+.header {
+    color: #ecebe8;
+    text-shadow: 2px 2px #636363;
 }
 
 .list-group-item {
-  background-color: #ecebe8;
+    background-color: #ecebe8;
 }
 
 .shadow {
-  box-shadow: 3px 3px 6px 5px #636363;
+    box-shadow: 3px 3px 6px 5px #636363;
 }

@@ -1,46 +1,46 @@
 <nav class="navbar navbar-inverse navbar-fixed-top">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="#!/events"><span class="glyphicon glyphicon-music"></span>  Gig List</a>
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#!/events"><span class="glyphicon glyphicon-music"></span>  Gig List</a>
+        </div>
+        <ul class="nav navbar-nav">
+            <li><a href="#!/events">Event Listing</a></li>
+            <li><a href="#!/form">Add An Event</a></li>
+        </ul>
     </div>
-    <ul class="nav navbar-nav">
-      <li><a href="#!/events">Event Listing</a></li>
-      <li><a href="#!/form">Add An Event</a></li>
-    </ul>
-  </div>
 </nav>
 
 <h1 class="header text-center">Update Event</h1>
 <div>
-  <form class ="container" ng-model="event" ng-submit="updateEvent(event)">
-    <div class="form-group">
-      <label class="header">Headlining Act(s)</label>
-      <input ng-model="event.headliner" type="text" class="form-control" placeholder="Add artist(s)...">
-    </div>
-    <div class="form-group">
-      <label class="header">Supporting Act(s)</label>
-      <input ng-model="event.support" type="text" class="form-control" placeholder="Add artist(s)...">
-    </div>
-    <div class="form-group">
-      <label class="header">Event Time & Date</label>
-        <input ng-model="event.date" type="datetime-local" class="form-control">
-    </div>
-    <div class="form-group">
-      <label class="header">Venue</label>
-      <input ng-model="event.venue" type="text" class="form-control" placeholder="Add venue name...">
-    </div>
-    <div class="form-group">
-      <label class="header">Address</label>
-      <input ng-model="event.address" type="text" class="form-control" placeholder="Add address...">
-    </div>
-    <div class="form-group">
-      <label class="header">Flyer URL</label>
-      <input ng-model="event.imageUrl" type="url" class="form-control" placeholder="Add URL...">
-    </div>
-    <div class="form-group">
-      <label class="header">Additional Information</label>
-      <textarea ng-model="event.description" class="form-control" rows="6" placeholder="Add any additional information here"></textarea>
-    </div>
-    <button type="submit" class="btn btn-primary btn-lg btn-block"><span class="header">Update Event</span></button>
-  </form>
+    <form class="container" ng-model="event" ng-submit="updateEvent(event)">
+        <div class="form-group">
+            <label class="header">Headlining Act(s)</label>
+            <input ng-model="event.headliner" type="text" class="form-control" placeholder="Add artist(s)...">
+        </div>
+        <div class="form-group">
+            <label class="header">Supporting Act(s)</label>
+            <input ng-model="event.support" type="text" class="form-control" placeholder="Add artist(s)...">
+        </div>
+        <div class="form-group">
+            <label class="header">Event Time & Date</label>
+            <input ng-model="event.date" type="datetime-local" class="form-control">
+        </div>
+        <div class="form-group">
+            <label class="header">Venue</label>
+            <input ng-model="event.venue" type="text" class="form-control" placeholder="Add venue name...">
+        </div>
+        <div class="form-group">
+            <label class="header">Address</label>
+            <input ng-model="event.address" type="text" class="form-control" placeholder="Add address...">
+        </div>
+        <div class="form-group">
+            <label class="header">Flyer URL</label>
+            <input ng-model="event.imageUrl" type="url" class="form-control" placeholder="Add URL...">
+        </div>
+        <div class="form-group">
+            <label class="header">Additional Information</label>
+            <textarea ng-model="event.description" class="form-control" rows="6" placeholder="Add any additional information here"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary btn-lg btn-block"><span class="header">Update Event</span></button>
+    </form>
 </div>
